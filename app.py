@@ -12,9 +12,10 @@ def query_db(query, args=(), one=False):
     rv = cur.fetchall()
     conn.close()
     return (rv[0] if rv else None) if one else rv
-@app.route("/")
-def home():
-    return render_template("index.html")
+
+# @app.route("/")
+# def home():
+#     return render_template("index.html")
 
 @app.route("/search", methods=["GET", "POST"])
 def search_users():
